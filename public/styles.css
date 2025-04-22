@@ -54,6 +54,7 @@ body {
 
 .field {
     margin-bottom: 6px;
+    position: relative;
 }
 
 input {
@@ -69,6 +70,25 @@ input {
 input:focus {
     outline: none;
     border: 1px solid #8e8e8e;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #8e8e8e;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.password-toggle:hover {
+    color: #262626;
 }
 
 .login-button {
